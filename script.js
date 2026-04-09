@@ -94,8 +94,6 @@ if(form){
 
   let selectedTime = null;
 
-  // Inicializar WhatsApp deshabilitado
-  waBtn.classList.add('opacity-50','pointer-events-none');
 
   // ====== Cargar horarios disponibles ======
   function loadTimes(dateStr=null){
