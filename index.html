@@ -16,12 +16,15 @@
 
 <nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5">
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-    <h1 class="text-3xl font-[Cinzel] text-amber-400 tracking-[0.25em]">DRV</h1>
+
+    <img src="assets/logo.png" alt="DRV Logo" class="h-14">
+
     <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
       <a href="#servicios" class="hover:text-amber-400">Servicios</a>
       <a href="#booking" class="hover:text-amber-400">Reservar</a>
-      <a href="#dashboard" class="hover:text-amber-400">Agenda</a>
+      <a href="calendar.html" class="hover:text-amber-400">Calendario</a>
     </div>
+
   </div>
 </nav>
 
@@ -44,7 +47,7 @@
 </section>
 
 <section id="booking" class="py-24 px-6 max-w-5xl mx-auto">
-  <div class="grid md:grid-cols-2 gap-8">
+  <div class="max-w-2xl mx-auto">
     <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
       <h3 class="text-4xl font-[Cinzel] mb-8">Reservar cita</h3>
       <form id="bookingForm" class="space-y-4">
@@ -60,17 +63,15 @@
         <div id="datePicker" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700 cursor-pointer relative">
           <span id="selectedDate" class="text-zinc-400">Selecciona fecha</span>
         </div>
-        <select id="time" required class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
-          <option value="">Selecciona hora</option>
-        </select>
-        <button class="w-full bg-amber-400 text-black p-4 rounded-xl font-bold">Confirmar reserva</button>
+
+        <!-- Slots interactivos -->
+        <div id="slotsPreview" class="grid grid-cols-2 gap-3 mt-4 text-center">
+          <p class="text-zinc-500 col-span-2">Selecciona una fecha para ver horarios.</p>
+        </div>
+
+        <button class="w-full bg-amber-400 text-black p-4 rounded-xl font-bold mt-4">Confirmar reserva</button>
       </form>
       <p class="text-zinc-500 text-sm mt-4">Disponibilidad: Viernes tarde (hasta 21:00) · Sábado completo · Domingo tarde (hasta 21:00)</p>
-    </div>
-
-    <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
-      <h3 class="text-4xl font-[Cinzel] mb-8">Horarios disponibles</h3>
-      <div id="slotsPreview" class="grid grid-cols-2 gap-3"></div>
     </div>
   </div>
 </section>
@@ -83,19 +84,6 @@
   </div>
 </section>
 
-<section id="dashboard" class="py-24 px-6 max-w-6xl mx-auto">
-  <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
-    <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-8">
-      <h3 class="text-4xl font-[Cinzel]">Panel de Agenda</h3>
-    </div>
-    <div id="bookingsList" class="space-y-4"></div>
-  </div>
-</section>
-
 <a id="waBtn" href="#" class="fixed bottom-6 right-6 bg-amber-400 text-black px-5 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition">WhatsApp</a>
 
 <footer class="py-10 text-center text-zinc-500 border-t border-zinc-900">© 2026 DRV Studio · Booking Experience</footer>
-
-
-</body>
-</html>
