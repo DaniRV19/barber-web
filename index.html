@@ -56,7 +56,10 @@
           <option>Fade Detallado</option>
           <option>Corte + Barba</option>
         </select>
-        <input id="date" required type="date" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+        <!-- Calendario propio -->
+        <div id="datePicker" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700 cursor-pointer relative">
+          <span id="selectedDate" class="text-zinc-400">Selecciona fecha</span>
+        </div>
         <select id="time" required class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
           <option value="">Selecciona hora</option>
         </select>
