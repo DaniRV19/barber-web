@@ -101,15 +101,14 @@ if(form){
 
             div.textContent = time;
 
-            div.className =
-            'bg-zinc-900 border border-zinc-800 rounded-xl p-3 cursor-pointer hover:bg-amber-400 hover:text-black';
+            div.className = 'bg-zinc-900 border border-zinc-800 rounded-xl p-3 cursor-pointer hover:bg-amber-400 hover:text-black';
 
             div.addEventListener('click',()=>{
 
                 selectedTime = time;
 
                 document.querySelectorAll('#slotsPreview div')
-                .forEach(d=>d.classList.remove('bg-amber-400','text-black'));
+                .forEach(d=>d.classList.remove('bg-zinc-900','text-black'));
 
                 div.classList.add('bg-amber-400','text-black');
 
