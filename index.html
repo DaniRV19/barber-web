@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRV Studio</title>
-  <script defer src="script.js"> </script>
+  <title>DRV Studio | Booking App</title>
+  <script defer src="script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,136 +14,84 @@
 
 <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(245,158,11,0.14),_transparent_25%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.04),_transparent_20%)]"></div>
 
-<!-- NAV -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5">
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
     <h1 class="text-3xl font-[Cinzel] text-amber-400 tracking-[0.25em]">DRV</h1>
     <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
       <a href="#servicios" class="hover:text-amber-400">Servicios</a>
-      <a href="#proceso" class="hover:text-amber-400">Proceso</a>
-      <a href="#faq" class="hover:text-amber-400">FAQ</a>
-      <a href="#reservas" class="hover:text-amber-400">Reservas</a>
+      <a href="#booking" class="hover:text-amber-400">Reservar</a>
+      <a href="#dashboard" class="hover:text-amber-400">Agenda</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="min-h-screen flex items-center justify-center px-6 relative text-center">
-  <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/80 to-black"></div>
-  <div class="relative z-10 max-w-5xl">
+<section class="min-h-screen flex items-center justify-center px-6 text-center">
+  <div class="max-w-5xl">
     <p class="uppercase tracking-[0.45em] text-amber-400 text-sm mb-5">DRV Private Grooming Studio</p>
-    <h2 class="text-6xl md:text-8xl font-[Cinzel] leading-tight mb-6">
-      Imagen cuidada.<br><span class="text-amber-400">Servicio personal.</span>
-    </h2>
-    <p class="text-zinc-400 max-w-2xl mx-auto text-lg mb-10">
-      Un estudio privado pensado para clientes que buscan atención cercana, detalle y una experiencia mucho más personal que una barbería convencional.
-    </p>
-    <div class="flex flex-col md:flex-row gap-4 justify-center">
-      <a href="#reservas" class="bg-amber-400 text-black px-10 py-4 rounded-full font-bold hover:scale-105 hover:shadow-[0_0_35px_rgba(251,191,36,0.4)] transition">Reservar sesión</a>
-      <a href="#sobre" class="border border-zinc-700 px-10 py-4 rounded-full hover:border-amber-400 hover:text-amber-400 transition">Conocer más</a>
+    <h2 class="text-6xl md:text-8xl font-[Cinzel] leading-tight mb-6">Reserva tu estilo.<br><span class="text-amber-400">Gestiona tu tiempo.</span></h2>
+    <p class="text-zinc-400 max-w-2xl mx-auto text-lg mb-10">Una experiencia premium con reservas inteligentes, horarios disponibles en tiempo real y gestión privada de citas.</p>
+    <a href="#booking" class="bg-amber-400 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition">Reservar ahora</a>
+  </div>
+</section>
+
+<section id="servicios" class="py-20 px-6 max-w-7xl mx-auto">
+  <h3 class="text-5xl font-[Cinzel] text-center mb-14">Servicios</h3>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl"><h4 class="text-2xl font-bold mb-3">Corte Premium</h4><p class="text-zinc-400">30 min · Diseño personalizado.</p></div>
+    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl"><h4 class="text-2xl font-bold mb-3">Fade Detallado</h4><p class="text-zinc-400">40 min · Precisión total.</p></div>
+    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl"><h4 class="text-2xl font-bold mb-3">Corte + Barba</h4><p class="text-zinc-400">50 min · Pack completo.</p></div>
+  </div>
+</section>
+
+<section id="booking" class="py-24 px-6 max-w-5xl mx-auto">
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+      <h3 class="text-4xl font-[Cinzel] mb-8">Reservar cita</h3>
+      <form id="bookingForm" class="space-y-4">
+        <input id="name" required type="text" placeholder="Tu nombre" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+        <input id="phone" required type="tel" placeholder="Tu teléfono" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+        <select id="service" required class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+          <option value="">Selecciona servicio</option>
+          <option>Corte Premium</option>
+          <option>Fade Detallado</option>
+          <option>Corte + Barba</option>
+        </select>
+        <input id="date" required type="date" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+        <select id="time" required class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+          <option value="">Selecciona hora</option>
+        </select>
+        <button class="w-full bg-amber-400 text-black p-4 rounded-xl font-bold">Confirmar reserva</button>
+      </form>
+      <p class="text-zinc-500 text-sm mt-4">Disponibilidad: Viernes tarde (hasta 21:00) · Sábado completo · Domingo tarde (hasta 21:00)</p>
+    </div>
+
+    <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+      <h3 class="text-4xl font-[Cinzel] mb-8">Horarios disponibles</h3>
+      <div id="slotsPreview" class="grid grid-cols-2 gap-3"></div>
     </div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section id="sobre" class="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-  <div>
-    <p class="text-amber-400 uppercase tracking-[0.3em] text-sm mb-4">Sobre DRV</p>
-    <h3 class="text-5xl font-[Cinzel] mb-6">Más exclusivo. Más personal.</h3>
-    <p class="text-zinc-400 text-lg leading-8">
-      DRV nace como un proyecto personal enfocado en ofrecer un trato más cercano, profesional y detallista. Sin prisas, sin colas, sin ruido: solo tú, tu estilo y una atención totalmente personalizada.
-    </p>
+<section id="thankyou" class="hidden py-24 px-6 max-w-4xl mx-auto text-center">
+  <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-12">
+    <h3 class="text-5xl font-[Cinzel] text-amber-400 mb-6">¡Gracias por tu reserva!</h3>
+    <p class="text-zinc-300 text-lg mb-4">Tu cita ha sido agendada correctamente.</p>
+    <p class="text-zinc-500">Me pondré en contacto contigo lo antes posible para confirmar todos los detalles.</p>
   </div>
-  <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 shadow-2xl">
-    <div class="space-y-6">
-      <div><span class="text-amber-400 font-bold">✔ Atención individual</span><p class="text-zinc-500">Cada sesión enfocada en el cliente.</p></div>
-      <div><span class="text-amber-400 font-bold">✔ Estilo personalizado</span><p class="text-zinc-500">Asesoramiento según rostro/imagen.</p></div>
-      <div><span class="text-amber-400 font-bold">✔ Experiencia privada</span><p class="text-zinc-500">Ambiente cuidado y reservado.</p></div>
+</section>
+
+<section id="dashboard" class="py-24 px-6 max-w-6xl mx-auto">
+  <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+    <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-8">
+      <h3 class="text-4xl font-[Cinzel]">Panel de Agenda</h3>
     </div>
+    <div id="bookingsList" class="space-y-4"></div>
   </div>
 </section>
 
-<!-- SERVICIOS -->
-<section id="servicios" class="py-24 px-6 bg-zinc-950">
-  <div class="max-w-7xl mx-auto">
-    <h3 class="text-5xl font-[Cinzel] text-center mb-16">Servicios DRV</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-black border border-zinc-800 p-8 rounded-3xl hover:border-amber-400 hover:-translate-y-2 transition">
-        <h4 class="text-2xl font-bold mb-4">Corte Premium</h4>
-        <p class="text-zinc-400 mb-6">Corte completo adaptado a tu estilo y forma facial.</p>
-        <span class="text-amber-400 font-bold">30 min</span>
-      </div>
-      <div class="bg-black border border-zinc-800 p-8 rounded-3xl hover:border-amber-400 hover:-translate-y-2 transition">
-        <h4 class="text-2xl font-bold mb-4">Fade Detallado</h4>
-        <p class="text-zinc-400 mb-6">Degradados trabajados al máximo detalle y precisión.</p>
-        <span class="text-amber-400 font-bold">40 min</span>
-      </div>
-      <div class="bg-black border border-zinc-800 p-8 rounded-3xl hover:border-amber-400 hover:-translate-y-2 transition">
-        <h4 class="text-2xl font-bold mb-4">Corte + Barba</h4>
-        <p class="text-zinc-400 mb-6">Pack completo para renovar tu imagen.</p>
-        <span class="text-amber-400 font-bold">50 min</span>
-      </div>
-    </div>
-  </div>
-</section>
+<a id="waBtn" href="#" class="fixed bottom-6 right-6 bg-amber-400 text-black px-5 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition">WhatsApp</a>
 
-<!-- PROCESO -->
-<section id="proceso" class="py-24 px-6 max-w-7xl mx-auto">
-  <h3 class="text-5xl font-[Cinzel] text-center mb-16">¿Cómo funciona?</h3>
-  <div class="grid md:grid-cols-4 gap-8 text-center">
-    <div><div class="text-amber-400 text-5xl mb-4">01</div><p>Elige tu servicio</p></div>
-    <div><div class="text-amber-400 text-5xl mb-4">02</div><p>Selecciona fecha</p></div>
-    <div><div class="text-amber-400 text-5xl mb-4">03</div><p>Confirma reserva</p></div>
-    <div><div class="text-amber-400 text-5xl mb-4">04</div><p>Vive la experiencia DRV</p></div>
-  </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section class="py-24 px-6 bg-zinc-950">
-  <div class="max-w-7xl mx-auto">
-    <h3 class="text-5xl font-[Cinzel] text-center mb-16">Opiniones</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-black border border-zinc-800 p-8 rounded-3xl"><p class="italic text-zinc-400">“Se nota que aquí se cuida el detalle muchísimo.”</p></div>
-      <div class="bg-black border border-zinc-800 p-8 rounded-3xl"><p class="italic text-zinc-400">“Mucho más personal que ir a una barbería grande.”</p></div>
-      <div class="bg-black border border-zinc-800 p-8 rounded-3xl"><p class="italic text-zinc-400">“Trato top y resultado perfecto siempre.”</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="py-24 px-6 max-w-4xl mx-auto">
-  <h3 class="text-5xl font-[Cinzel] text-center mb-12">Preguntas Frecuentes</h3>
-  <div class="space-y-4">
-    <details class="bg-zinc-950 border border-zinc-800 p-6 rounded-2xl"><summary class="cursor-pointer font-bold">¿Dónde se realiza el servicio?</summary><p class="text-zinc-400 mt-4">En un espacio privado preparado para ofrecer comodidad y atención personalizada.</p></details>
-    <details class="bg-zinc-950 border border-zinc-800 p-6 rounded-2xl"><summary class="cursor-pointer font-bold">¿Se puede cancelar la cita?</summary><p class="text-zinc-400 mt-4">Sí, con aviso previo mínimo de 24 horas.</p></details>
-    <details class="bg-zinc-950 border border-zinc-800 p-6 rounded-2xl"><summary class="cursor-pointer font-bold">¿Aceptas nuevos clientes?</summary><p class="text-zinc-400 mt-4">Siempre que haya disponibilidad en agenda.</p></details>
-  </div>
-</section>
-
-<!-- RESERVAS -->
-<section id="reservas" class="py-24 px-6 max-w-4xl mx-auto">
-  <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 shadow-2xl">
-    <h3 class="text-5xl font-[Cinzel] text-center mb-10">Reserva tu cita</h3>
-    <form id="bookingForm" class="space-y-5">
-      <input required type="text" placeholder="Tu nombre" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
-      <input required type="tel" placeholder="Tu teléfono" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
-      <select required class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
-        <option value="">Selecciona servicio</option>
-        <option>Corte Premium</option>
-        <option>Fade Detallado</option>
-        <option>Corte + Barba</option>
-      </select>
-      <input required type="date" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
-      <button class="w-full bg-amber-400 text-black p-4 rounded-xl font-bold hover:bg-amber-300 transition">Confirmar Reserva</button>
-    </form>
-    <p id="successMsg" class="hidden text-green-400 mt-5 text-center">Reserva enviada correctamente. Te contactaré pronto.</p>
-  </div>
-</section>
-
-<!-- WHATSAPP FLOAT -->
-<a href="#" class="fixed bottom-6 right-6 bg-amber-400 text-black px-5 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition">WhatsApp</a>
-
-<footer class="py-10 text-center text-zinc-500 border-t border-zinc-900">© 2026 DRV Studio · Marca personal / servicio privado.</footer>
+<footer class="py-10 text-center text-zinc-500 border-t border-zinc-900">© 2026 DRV Studio · Booking Experience</footer>
 
 
 </body>
