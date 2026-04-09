@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRV Studio | Booking App</title>
-  <script defer src="script.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DRV Studio | Booking App</title>
+
+<script defer src="script.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+
+
 <body class="bg-black text-white font-[Inter] overflow-x-hidden scroll-smooth selection:bg-amber-400 selection:text-black">
 
+
+<!-- Background -->
 <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(245,158,11,0.14),_transparent_25%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.04),_transparent_20%)]"></div>
 
+
+<!-- NAVBAR -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5">
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
@@ -21,6 +31,9 @@
 
     <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
       <a href="#servicios" class="hover:text-amber-400">Servicios</a>
+      <a href="#about" class="hover:text-amber-400">Nosotros</a>
+      <a href="#reviews" class="hover:text-amber-400">Opiniones</a>
+      <a href="#faq" class="hover:text-amber-400">FAQ</a>
       <a href="#booking" class="hover:text-amber-400">Reservar</a>
       <a href="calendar.html" class="hover:text-amber-400">Calendario</a>
     </div>
@@ -28,62 +41,262 @@
   </div>
 </nav>
 
+
+<!-- HERO -->
 <section class="min-h-screen flex items-center justify-center px-6 text-center">
+
   <div class="max-w-5xl">
-    <p class="uppercase tracking-[0.45em] text-amber-400 text-sm mb-5">DRV Private Grooming Studio</p>
-    <h2 class="text-6xl md:text-8xl font-[Cinzel] leading-tight mb-6">Reserva tu estilo.<br><span class="text-amber-400">Gestiona tu tiempo.</span></h2>
-    <p class="text-zinc-400 max-w-2xl mx-auto text-lg mb-10">Una experiencia premium con reservas inteligentes, horarios disponibles en tiempo real y gestión privada de citas.</p>
-    <a href="#booking" class="bg-amber-400 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition">Reservar ahora</a>
+
+    <p class="uppercase tracking-[0.45em] text-amber-400 text-sm mb-5">
+      DRV Private Grooming Studio
+    </p>
+
+    <h2 class="text-6xl md:text-8xl font-[Cinzel] leading-tight mb-6">
+      Reserva tu estilo.<br>
+      <span class="text-amber-400">Gestiona tu tiempo.</span>
+    </h2>
+
+    <p class="text-zinc-400 max-w-2xl mx-auto text-lg mb-10">
+      Una experiencia premium con reservas inteligentes, horarios disponibles en tiempo real y gestión privada de citas.
+    </p>
+
+    <a href="#booking" class="bg-amber-400 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition">
+      Reservar ahora
+    </a>
+
   </div>
+
 </section>
 
+
+<!-- SERVICIOS -->
 <section id="servicios" class="py-20 px-6 max-w-7xl mx-auto">
-  <h3 class="text-5xl font-[Cinzel] text-center mb-14">Servicios</h3>
+
+  <h3 class="text-5xl font-[Cinzel] text-center mb-14">
+    Servicios
+  </h3>
+
   <div class="grid md:grid-cols-3 gap-8">
-    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl"><h4 class="text-2xl font-bold mb-3">Corte Premium</h4><p class="text-zinc-400">30 min · Diseño personalizado.</p></div>
-    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl"><h4 class="text-2xl font-bold mb-3">Fade Detallado</h4><p class="text-zinc-400">40 min · Precisión total.</p></div>
-    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl"><h4 class="text-2xl font-bold mb-3">Corte + Barba</h4><p class="text-zinc-400">50 min · Pack completo.</p></div>
+
+    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+      <h4 class="text-2xl font-bold mb-3">Corte Premium</h4>
+      <p class="text-zinc-400">30 min · Diseño personalizado.</p>
+    </div>
+
+    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+      <h4 class="text-2xl font-bold mb-3">Fade Detallado</h4>
+      <p class="text-zinc-400">40 min · Precisión total.</p>
+    </div>
+
+    <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+      <h4 class="text-2xl font-bold mb-3">Corte + Barba</h4>
+      <p class="text-zinc-400">50 min · Pack completo.</p>
+    </div>
+
   </div>
+
 </section>
 
-<section id="booking" class="py-24 px-6 max-w-5xl mx-auto">
-  <div class="max-w-2xl mx-auto">
+
+<!-- SOBRE DRV -->
+<section id="about" class="py-24 px-6 bg-zinc-950 border-y border-zinc-900">
+
+  <div class="max-w-5xl mx-auto text-center">
+
+    <p class="uppercase tracking-[0.35em] text-amber-400 text-sm mb-4">
+      Nuestra Filosofía
+    </p>
+
+    <h3 class="text-5xl font-[Cinzel] mb-8">
+      Más que un corte,<br>
+      una experiencia.
+    </h3>
+
+    <p class="text-zinc-400 text-lg leading-relaxed max-w-3xl mx-auto">
+      En DRV Studio cada cita está diseñada para ofrecer atención personalizada,
+      precisión absoluta y una experiencia privada donde cada detalle importa.
+      No buscamos simplemente cortar cabello; buscamos elevar tu imagen y tu confianza.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- TESTIMONIOS -->
+<section id="reviews" class="py-24 px-6">
+
+  <div class="max-w-6xl mx-auto">
+
+    <h3 class="text-5xl font-[Cinzel] text-center mb-14">
+      Lo que dicen nuestros clientes
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+        <p class="text-amber-400 text-xl mb-4">★★★★★</p>
+        <p class="text-zinc-300 mb-4">
+          "El mejor fade que me han hecho nunca, atención al detalle increíble."
+        </p>
+        <span class="text-zinc-500 text-sm">— Javier M.</span>
+      </div>
+
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+        <p class="text-amber-400 text-xl mb-4">★★★★★</p>
+        <p class="text-zinc-300 mb-4">
+          "Ambiente premium, trato cercano y resultado impecable."
+        </p>
+        <span class="text-zinc-500 text-sm">— Dani R.</span>
+      </div>
+
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+        <p class="text-amber-400 text-xl mb-4">★★★★★</p>
+        <p class="text-zinc-300 mb-4">
+          "Una experiencia diferente a cualquier barbería tradicional."
+        </p>
+        <span class="text-zinc-500 text-sm">— Carlos T.</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" class="py-24 px-6 bg-zinc-950 border-y border-zinc-900">
+
+  <div class="max-w-4xl mx-auto">
+
+    <h3 class="text-5xl font-[Cinzel] text-center mb-14">
+      Preguntas frecuentes
+    </h3>
+
+    <div class="space-y-6">
+
+      <div class="bg-black border border-zinc-800 rounded-2xl p-6">
+        <h4 class="font-bold text-lg mb-2 text-amber-400">
+          ¿Dónde está ubicado el estudio?
+        </h4>
+        <p class="text-zinc-400">
+          Nuestro estudio privado está ubicado en Sevilla Este.
+        </p>
+      </div>
+
+      <div class="bg-black border border-zinc-800 rounded-2xl p-6">
+        <h4 class="font-bold text-lg mb-2 text-amber-400">
+          ¿Qué métodos de pago aceptáis?
+        </h4>
+        <p class="text-zinc-400">
+          Aceptamos efectivo y Bizum.
+        </p>
+      </div>
+
+      <div class="bg-black border border-zinc-800 rounded-2xl p-6">
+        <h4 class="font-bold text-lg mb-2 text-amber-400">
+          ¿Puedo cancelar mi cita?
+        </h4>
+        <p class="text-zinc-400">
+          Sí, puedes cancelar o modificar tu cita con al menos 24h de antelación.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BOOKING -->
+<section id="booking" class="py-24 px-6">
+
+  <div class="max-w-3xl mx-auto">
+
     <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
-      <h3 class="text-4xl font-[Cinzel] mb-8">Reservar cita</h3>
+
+      <h3 class="text-4xl font-[Cinzel] mb-8 text-center">
+        Reservar cita
+      </h3>
+
       <form id="bookingForm" class="space-y-4">
-        <input id="name" required type="text" placeholder="Tu nombre" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
-        <input id="phone" required type="tel" placeholder="Tu teléfono" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
-        <select id="service" required class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+
+        <input id="name" required type="text" placeholder="Tu nombre"
+        class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+
+        <input id="phone" required type="tel" placeholder="Tu teléfono"
+        class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+
+        <select id="service" required
+        class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
           <option value="">Selecciona servicio</option>
           <option>Corte Premium</option>
           <option>Fade Detallado</option>
           <option>Corte + Barba</option>
         </select>
-        <!-- Calendario propio -->
-        <div id="datePicker" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700 cursor-pointer relative">
+
+
+        <div id="datePicker"
+        class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700 cursor-pointer relative">
           <span id="selectedDate" class="text-zinc-400">Selecciona fecha</span>
         </div>
 
-        <!-- Slots interactivos -->
-        <div id="slotsPreview" class="grid grid-cols-2 gap-3 mt-4 text-center">
-          <p class="text-zinc-500 col-span-2">Selecciona una fecha para ver horarios.</p>
+
+        <div id="slotsPreview"
+        class="grid grid-cols-2 gap-3 mt-4 text-center">
+
+          <p class="text-zinc-500 col-span-2">
+            Selecciona una fecha para ver horarios.
+          </p>
+
         </div>
 
-        <button class="w-full bg-amber-400 text-black p-4 rounded-xl font-bold mt-4">Confirmar reserva</button>
+
+        <button class="w-full bg-amber-400 text-black p-4 rounded-xl font-bold mt-4">
+          Confirmar reserva
+        </button>
+
       </form>
-      <p class="text-zinc-500 text-sm mt-4">Disponibilidad: Viernes tarde (hasta 21:00) · Sábado completo · Domingo tarde (hasta 21:00)</p>
+
     </div>
+
   </div>
+
 </section>
 
+
+<!-- THANK YOU -->
 <section id="thankyou" class="hidden py-24 px-6 max-w-4xl mx-auto text-center">
+
   <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-12">
-    <h3 class="text-5xl font-[Cinzel] text-amber-400 mb-6">¡Gracias por tu reserva!</h3>
-    <p class="text-zinc-300 text-lg mb-4">Tu cita ha sido agendada correctamente.</p>
-    <p class="text-zinc-500">Me pondré en contacto contigo lo antes posible para confirmar todos los detalles.</p>
+
+    <h3 class="text-5xl font-[Cinzel] text-amber-400 mb-6">
+      ¡Gracias por tu reserva!
+    </h3>
+
+    <p class="text-zinc-300 text-lg mb-4">
+      Tu cita ha sido agendada correctamente.
+    </p>
+
   </div>
+
 </section>
 
-<a id="waBtn" href="#" class="fixed bottom-6 right-6 bg-amber-400 text-black px-5 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition">WhatsApp</a>
 
-<footer class="py-10 text-center text-zinc-500 border-t border-zinc-900">© 2026 DRV Studio · Booking Experience</footer>
+<!-- WHATSAPP -->
+<a id="waBtn" href="#"
+class="fixed bottom-6 right-6 bg-amber-400 text-black px-5 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition">
+WhatsApp
+</a>
+
+
+<!-- FOOTER -->
+<footer class="py-10 text-center text-zinc-500 border-t border-zinc-900">
+© 2026 DRV Studio · Booking Experience
+</footer>
+
+
+</body>
+</html>
