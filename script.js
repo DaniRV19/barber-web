@@ -193,46 +193,98 @@ const calendarContainer = document.getElementById("calendarContainer");
 
 if(calendarContainer){
 
+    renderCalendarBookings();
+
+}
+
+function renderCalendarBookings(){
+
+    if(!calendarContainer) return;
+
     const bookings = getBookings();
+
+    calendarContainer.innerHTML = "";
 
     if(bookings.length===0){
 
         calendarContainer.innerHTML=`
         <p class="text-zinc-500 col-span-3">
-        No hay reservas todavía.
+            No hay reservas todavía.
         </p>
         `;
 
-    }else{
-
-        bookings.sort((a,b)=>new Date(a.date)-new Date(b.date));
-
-        bookings.forEach(booking=>{
-
-            calendarContainer.innerHTML+=`
-            
-            <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
-
-                <p class="text-amber-400 font-bold mb-2">
-                ${booking.date}
-                </p>
-
-                <h3 class="text-2xl font-bold">
-                ${booking.name}
-                </h3>
-
-                <p>${booking.service}</p>
-
-                <p class="text-zinc-500 mt-2">
-                ${booking.time}
-                </p>
-
-            </div>
-            
-            `;
-
-        });
-
+        return;
     }
+
+    bookings.sort((a,b)=>new Date(a.date)-new Date(b.date));
+
+    bookings.forEach((booking,index)=>{
+
+        calendarContainer.innerHTML += `
+        
+        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-6">
+
+            <p class="text-amber-400 font-bold mb-2">
+                ${booking.date}
+            </p>
+
+            <h3 class="text-2xl font-bold">
+                ${booking.name}
+            </h3>
+
+            <p class="text-zinc-400">
+                ${booking.service}
+            </p>
+
+            <p class="text-zinc-500 mt-2 mb-4">
+                ${booking.time}
+            </p>
+
+            <button onclick="cancelBooking(${index})"
+            class="w-full bg-red-500 hover:bg-red-600 transition p-3 rounded-xl font-bold">
+                Cancelar cita
+            </button>
+
+        </div>
+        
+        `;
+    });
+
+}
+
+
+// ====== CANCELAR RESERVA ======
+function cancelBooking(index){
+
+    const bookings = getBookings();
+
+    const booking = bookings[index];
+
+    const bookingDateTime = new Date(`${booking.date}T${booking.time}`);
+
+    const now = new Date();
+
+    const diffHours = (bookingDateTime - now) / (1000 * 60 * 60);
+
+    if(diffHours < 24){
+
+        alert("❌ No puedes cancelar una cita con menos de 24 horas de antelación.");
+
+        return;
+    }
+
+    const confirmCancel = confirm(
+        `¿Seguro que quieres cancelar la cita de ${booking.name}?`
+    );
+
+    if(!confirmCancel) return;
+
+    bookings.splice(index,1);
+
+    saveBookings(bookings);
+
+    renderCalendarBookings();
+
+    alert("✅ Cita cancelada correctamente.");
 
 }
