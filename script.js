@@ -124,19 +124,220 @@ if(form){
 
     function openCalendar(){
 
-        if(document.getElementById('calendarOverlay')) return;
+    if(document.getElementById('calendarOverlay')) return;
 
-        const overlay = document.createElement('div');
+    const overlay = document.createElement('div');
 
-        overlay.id='calendarOverlay';
+    overlay.id = 'calendarOverlay';
 
-        overlay.className='absolute bg-zinc-900 border border-zinc-700 rounded-xl p-4 mt-2';
+    overlay.className = `
+        absolute top-full left-0 mt-2 w-full
+        bg-zinc-900 border border-zinc-700
+        rounded-xl p-4 shadow-xl z-50
+    `;
 
-        overlay.innerHTML=`<p class="text-zinc-400">Calendario próximamente mejorado 🔥</p>`;
 
-        datePicker.appendChild(overlay);
+
+      // Detectar clicks fuera del calendario para cerrarlo
+      document.addEventListener('click', (e) => {
+        const overlay = document.getElementById('calendarOverlay');
+        const datePicker = document.getElementById('datePicker');
+    
+        if (overlay && !overlay.contains(e.target) && !datePicker.contains(e.target)) {
+          overlay.remove();
+        }
+      });
+
+
+
+
+    const today = new Date();
+
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+
+
+    function renderCalendar(){
+
+        overlay.innerHTML = '';
+
+        const monthNames = [
+            'Enero','Febrero','Marzo','Abril','Mayo','Junio',
+            'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'
+        ];
+
+
+        overlay.innerHTML += `
+        
+        <div class="flex justify-between items-center mb-4">
+
+            <button id="prevMonth" class="text-amber-400 font-bold">
+                ←
+            </button>
+
+            <h4 class="font-bold text-lg">
+                ${monthNames[currentMonth]} ${currentYear}
+            </h4>
+
+            <button id="nextMonth" class="text-amber-400 font-bold">
+                →
+            </button>
+
+        </div>
+
+
+        <div class="grid grid-cols-7 gap-2 text-center text-sm mb-3 text-zinc-400">
+            <div>L</div><div>M</div><div>X</div><div>J</div>
+            <div>V</div><div>S</div><div>D</div>
+        </div>
+
+        <div id="calendarDays" class="grid grid-cols-7 gap-2"></div>
+        
+        `;
+
+
+        const calendarDays = overlay.querySelector('#calendarDays');
+
+
+        const firstDay = new Date(currentYear,currentMonth,1);
+
+        const lastDay = new Date(currentYear,currentMonth+1,0);
+
+        let startDay = firstDay.getDay();
+
+        startDay = startDay===0 ? 6 : startDay-1;
+
+
+        for(let i=0;i<startDay;i++){
+
+            calendarDays.innerHTML += `<div></div>`;
+
+        }
+
+
+        for(let day=1; day<=lastDay.getDate(); day++){
+
+            const fullDate = new Date(currentYear,currentMonth,day);
+
+            const dayOfWeek = fullDate.getDay();
+
+            const isPast = fullDate < new Date().setHours(0,0,0,0);
+
+            const allowedDay = [5,6,0].includes(dayOfWeek);
+
+
+            let classes = `
+                p-2 rounded-lg text-center
+            `;
+
+            if(isPast || !allowedDay){
+
+                classes += `
+                    bg-zinc-800 text-zinc-600 cursor-not-allowed
+                `;
+
+            } else {
+
+                classes += `
+                    bg-zinc-800 hover:bg-amber-400 hover:text-black cursor-pointer
+                `;
+
+            }
+
+
+            const dateString =
+            `${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+
+
+            calendarDays.innerHTML += `
+            
+            <div class="${classes}" data-date="${dateString}">
+                ${day}
+            </div>
+            
+            `;
+
+        }
+
+
+        overlay.querySelector('#prevMonth').onclick = ()=>{
+
+            if(currentMonth===0){
+
+                currentMonth=11;
+                currentYear--;
+
+            }else{
+
+                currentMonth--;
+
+            }
+
+            if(
+                currentYear < today.getFullYear() ||
+                (
+                    currentYear===today.getFullYear() &&
+                    currentMonth<today.getMonth()
+                )
+            ){
+
+                currentMonth=today.getMonth();
+                currentYear=today.getFullYear();
+
+            }
+
+            renderCalendar();
+
+        };
+
+
+        overlay.querySelector('#nextMonth').onclick = ()=>{
+
+            if(currentMonth===11){
+
+                currentMonth=0;
+                currentYear++;
+
+            }else{
+
+                currentMonth++;
+
+            }
+
+            renderCalendar();
+
+        };
+
+
+        overlay.querySelectorAll('[data-date]').forEach(day=>{
+
+            if(!day.classList.contains('cursor-not-allowed')){
+
+                day.onclick = ()=>{
+
+                    const selectedDate = day.dataset.date;
+
+                    document.getElementById('selectedDate').textContent =
+                    selectedDate;
+
+                    loadTimes(selectedDate);
+
+                    overlay.remove();
+
+                };
+
+            }
+
+        });
 
     }
+
+
+    renderCalendar();
+
+    datePicker.appendChild(overlay);
+
+}
 
     datePicker.addEventListener('click',openCalendar);
 
