@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRV Barber Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white font-[Inter] overflow-x-hidden scroll-smooth">
+
+  <!-- BACKGROUND FX -->
+  <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(245,158,11,0.15),_transparent_25%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.04),_transparent_20%)]"></div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full bg-black/70 backdrop-blur-xl border-b border-amber-500/10 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-amber-400 tracking-[0.3em] font-[Cinzel]">DRV</h1>
+      <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+        <a href="#servicios" class="hover:text-amber-400 transition">Servicios</a>
+        <a href="#experiencia" class="hover:text-amber-400 transition">Experiencia</a>
+        <a href="#reservas" class="hover:text-amber-400 transition">Reservas</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center px-6 relative text-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black"></div>
+    <div class="relative z-10 max-w-5xl animate-fade-up">
+      <p class="uppercase tracking-[0.4em] text-amber-400 text-sm mb-4">DRV Barber Studio</p>
+      <h2 class="text-6xl md:text-8xl font-[Cinzel] font-bold mb-6 leading-tight">
+        Donde el estilo<br>
+        <span class="text-amber-400">cobra actitud</span>
+      </h2>
+      <p class="text-zinc-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+        Más que una barbería. Una experiencia premium creada para hombres que cuidan su imagen y valoran el detalle.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="#reservas" class="bg-amber-400 text-black px-10 py-4 rounded-full font-semibold hover:scale-105 hover:shadow-[0_0_30px_rgba(251,191,36,0.4)] transition duration-300">
+          Reservar Ahora
+        </a>
+        <a href="#servicios" class="border border-zinc-700 px-10 py-4 rounded-full hover:border-amber-400 hover:text-amber-400 transition duration-300">
+          Descubrir Servicios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-12 border-y border-zinc-900 bg-zinc-950/70 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 text-center gap-8 px-6">
+      <div>
+        <h3 class="text-4xl font-bold text-amber-400">+500</h3>
+        <p class="text-zinc-400">Clientes satisfechos</p>
+      </div>
+      <div>
+        <h3 class="text-4xl font-bold text-amber-400">5★</h3>
+        <p class="text-zinc-400">Valoración media</p>
+      </div>
+      <div>
+        <h3 class="text-4xl font-bold text-amber-400">100%</h3>
+        <p class="text-zinc-400">Experiencia personalizada</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-24 px-6 max-w-7xl mx-auto">
+    <h3 class="text-5xl font-[Cinzel] text-center mb-16">Servicios Premium</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl hover:border-amber-400 hover:-translate-y-2 transition duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.08)]">
+        <h4 class="text-2xl font-bold mb-3">Corte Signature</h4>
+        <p class="text-zinc-400">Un corte elegante diseñado para potenciar tu estilo personal.</p>
+      </div>
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl hover:border-amber-400 hover:-translate-y-2 transition duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.08)]">
+        <h4 class="text-2xl font-bold mb-3">Fade Pro</h4>
+        <p class="text-zinc-400">Degradados modernos con precisión técnica impecable.</p>
+      </div>
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl hover:border-amber-400 hover:-translate-y-2 transition duration-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.08)]">
+        <h4 class="text-2xl font-bold mb-3">Beard Ritual</h4>
+        <p class="text-zinc-400">Cuidado premium y perfilado para una barba perfecta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia" class="py-24 bg-zinc-950 px-6">
+    <h3 class="text-5xl font-[Cinzel] text-center mb-16">La Experiencia DRV</h3>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="bg-zinc-900/70 p-8 rounded-3xl border border-zinc-800 hover:border-amber-400 transition">
+        <div class="text-amber-400 text-4xl mb-4">✂️</div>
+        <h4 class="text-2xl font-bold mb-3">Precisión</h4>
+        <p class="text-zinc-400">Cada detalle importa y cada acabado refleja excelencia.</p>
+      </div>
+      <div class="bg-zinc-900/70 p-8 rounded-3xl border border-zinc-800 hover:border-amber-400 transition">
+        <div class="text-amber-400 text-4xl mb-4">🔥</div>
+        <h4 class="text-2xl font-bold mb-3">Tendencia</h4>
+        <p class="text-zinc-400">Looks clásicos y modernos adaptados a ti.</p>
+      </div>
+      <div class="bg-zinc-900/70 p-8 rounded-3xl border border-zinc-800 hover:border-amber-400 transition">
+        <div class="text-amber-400 text-4xl mb-4">👑</div>
+        <h4 class="text-2xl font-bold mb-3">Exclusividad</h4>
+        <p class="text-zinc-400">Un servicio premium desde que entras hasta que sales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="py-24 px-6 max-w-7xl mx-auto">
+    <h3 class="text-5xl font-[Cinzel] text-center mb-16">Opiniones Reales</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+        <p class="italic text-zinc-300 mb-4">"Profesionalidad y ambiente brutal. Siempre salgo perfecto."</p>
+        <span class="text-amber-400">— Cliente habitual</span>
+      </div>
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+        <p class="italic text-zinc-300 mb-4">"El mejor fade que me han hecho. Atención impecable."</p>
+        <span class="text-amber-400">— Cliente satisfecho</span>
+      </div>
+      <div class="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl">
+        <p class="italic text-zinc-300 mb-4">"Experiencia premium total, recomendado 100%."</p>
+        <span class="text-amber-400">— Nuevo cliente</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-24 px-6 text-center bg-gradient-to-r from-amber-400/10 to-transparent">
+    <h3 class="text-5xl font-[Cinzel] mb-6">Tu imagen habla antes que tú</h3>
+    <p class="text-zinc-400 max-w-2xl mx-auto mb-8 text-lg">Haz que cada primera impresión cuente. Reserva hoy y transforma tu estilo con DRV.</p>
+    <a href="#reservas" class="bg-amber-400 text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition duration-300 inline-block">
+      Reservar Mi Cita
+    </a>
+  </section>
+
+  <!-- RESERVAS -->
+  <section id="reservas" class="py-24 px-6 max-w-4xl mx-auto">
+    <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 shadow-2xl">
+      <h3 class="text-5xl font-[Cinzel] text-center mb-10">Reserva Ahora</h3>
+      <form class="space-y-5">
+        <input type="text" placeholder="Tu nombre" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+        <input type="tel" placeholder="Tu teléfono" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+        <select class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+          <option>Selecciona servicio</option>
+          <option>Corte Signature</option>
+          <option>Fade Pro</option>
+          <option>Beard Ritual</option>
+        </select>
+        <input type="date" class="w-full p-4 rounded-xl bg-zinc-900 border border-zinc-700">
+        <button class="w-full bg-amber-400 text-black p-4 rounded-xl font-bold hover:bg-amber-300 transition">
+          Confirmar Reserva
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 text-center text-zinc-500 border-t border-zinc-900">
+    © 2026 DRV Barber Studio · Diseñado con estilo.
+  </footer>
+
+</body>
+</html>
