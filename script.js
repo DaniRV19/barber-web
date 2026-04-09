@@ -5,6 +5,52 @@ const scheduleByDay = {
   0: ['16:00','17:00','18:00','19:00','20:00','21:00']
 };
 
+
+
+
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+const mobileMenu = document.getElementById('mobileMenu');
+
+let menuOpen = false;
+
+mobileMenuButton.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+
+  if(menuOpen){
+    mobileMenu.classList.remove('-translate-y-full');
+    mobileMenu.classList.add('translate-y-0');
+
+    // Transformar hamburguesa en X
+    mobileMenuButton.children[0].classList.add('rotate-45', 'translate-y-2');
+    mobileMenuButton.children[1].classList.add('opacity-0');
+    mobileMenuButton.children[2].classList.add('-rotate-45', '-translate-y-2');
+  } else {
+    mobileMenu.classList.remove('translate-y-0');
+    mobileMenu.classList.add('-translate-y-full');
+
+    // Volver a hamburguesa
+    mobileMenuButton.children[0].classList.remove('rotate-45', 'translate-y-2');
+    mobileMenuButton.children[1].classList.remove('opacity-0');
+    mobileMenuButton.children[2].classList.remove('-rotate-45', '-translate-y-2');
+  }
+});
+
+// Cerrar menú al pulsar un enlace
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuOpen = false;
+    mobileMenu.classList.remove('translate-y-0');
+    mobileMenu.classList.add('-translate-y-full');
+    mobileMenuButton.children[0].classList.remove('rotate-45', 'translate-y-2');
+    mobileMenuButton.children[1].classList.remove('opacity-0');
+    mobileMenuButton.children[2].classList.remove('-rotate-45', '-translate-y-2');
+  });
+});
+
+
+
+
+
 // ====== Funciones de reservas ======
 function getBookings() {
   return JSON.parse(localStorage.getItem('drvBookings') || '[]');
@@ -226,7 +272,7 @@ if(form){
     // Habilitar WhatsApp
     const waNumber = "34601726229";
     const waMessage = encodeURIComponent(
-      `Hola DRV, quiero confirmar mi cita:%0A` +
+      `Hola Dani, quiero confirmar mi cita:%0A` +
       `Nombre: ${booking.name}%0A` +
       `Servicio: ${booking.service}%0A` +
       `Fecha: ${booking.date}%0A` +

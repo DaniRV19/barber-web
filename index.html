@@ -24,20 +24,39 @@
 
 
 <!-- NAVBAR -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5">
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/5 shadow-md">
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
+    <!-- Logo -->
     <img src="assets/logo.png" alt="DRV Logo" class="h-14">
 
+    <!-- Menú desktop -->
     <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-      <a href="#servicios" class="hover:text-amber-400">Servicios</a>
-      <a href="#about" class="hover:text-amber-400">Nosotros</a>
-      <a href="#reviews" class="hover:text-amber-400">Opiniones</a>
-      <a href="#faq" class="hover:text-amber-400">FAQ</a>
-      <a href="#booking" class="hover:text-amber-400">Reservar</a>
-      <a href="calendar.html" class="hover:text-amber-400">Calendario</a>
+      <a href="#servicios" class="hover:text-amber-400 transition-colors">Servicios</a>
+      <a href="#about" class="hover:text-amber-400 transition-colors">Nosotros</a>
+      <a href="#reviews" class="hover:text-amber-400 transition-colors">Opiniones</a>
+      <a href="#faq" class="hover:text-amber-400 transition-colors">FAQ</a>
+      <a href="#booking" class="hover:text-amber-400 transition-colors">Reservar</a>
+      <a href="calendar.html" class="hover:text-amber-400 transition-colors">Calendario</a>
     </div>
 
+    <!-- Botón hamburguesa móvil -->
+    <button id="mobileMenuButton" class="md:hidden flex flex-col justify-center items-center gap-1 w-8 h-8 focus:outline-none z-50">
+      <span class="block w-8 h-0.5 bg-white rounded transition-all duration-300"></span>
+      <span class="block w-8 h-0.5 bg-white rounded transition-all duration-300"></span>
+      <span class="block w-8 h-0.5 bg-white rounded transition-all duration-300"></span>
+    </button>
+
+  </div>
+
+  <!-- Menú móvil -->
+  <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center gap-8 text-lg uppercase tracking-widest transform -translate-y-full transition-transform duration-300">
+    <a href="#servicios" class="hover:text-amber-400 transition-colors">Servicios</a>
+    <a href="#about" class="hover:text-amber-400 transition-colors">Nosotros</a>
+    <a href="#reviews" class="hover:text-amber-400 transition-colors">Opiniones</a>
+    <a href="#faq" class="hover:text-amber-400 transition-colors">FAQ</a>
+    <a href="#booking" class="hover:text-amber-400 transition-colors">Reservar</a>
+    <a href="calendar.html" class="hover:text-amber-400 transition-colors">Calendario</a>
   </div>
 </nav>
 
