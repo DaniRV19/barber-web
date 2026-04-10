@@ -221,6 +221,28 @@ if(form){
 
 
 
+
+
+
+    const message = `
+    Nueva reserva DRV Studio 
+
+    - Nombre: ${booking.name}
+    - Teléfono: ${booking.phone}
+    - Servicio: ${booking.service}
+    - Fecha: ${booking.date}
+    - Hora: ${booking.time}
+    `;
+
+    const whatsappURL = `https://wa.me/34601726229?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, '_blank');
+
+
+
+
+
+
   });
 }
 
